@@ -21,7 +21,7 @@
             $method = $_SERVER['REQUEST_METHOD'];
             $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-            foreach(this->routes as $route){
+            foreach($this->routes as $route){
                 $pattern = str_replace(
                     '{id}',
                     '([0-9]+)',
@@ -37,7 +37,7 @@
                     $controller = new $controllerClass();
 
                     $function = $route['function'];
-                    $controller->$function();
+                    call_user_func_array([$controller, $function], $matches);
 
                     return;
                 }
