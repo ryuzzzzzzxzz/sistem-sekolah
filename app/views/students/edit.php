@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Siswa</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-100">
+    <!-- header start -->
+    <header class="bg-blue-500 text-white ">
+        <div class="flex items-center justify-between container mx-auto p-4">
+            <a href="/students" class="font-bold text-xl">Sistem Sekolah</a>
+            <a href="/students/create" class="bg-white text-blue-500 px-4 py-2 rounded-lg">+ Tambah siswa</a>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- main start -->
+    <main class="container mx-auto grow">
+        <div class="mt-8 space-y-2">
+            <!-- card header start -->
+            <div class="p-4 shadow rounded-lg bg-white">
+                <h1 class="text-2xl font-bold">Edit Siswa</h1>
+                <p>Mengedit data siswa ke dalam sistem</p>
+            </div>
+            <!-- card header end -->
+
+            <!-- Card  Body Start -->
+            <div class="bg-white shadow rounded-lg p-4" >
+                <form action="/students" class="grid grid-cols-2 gap-4" method="POST">
+                    <div class="space-y-2">
+                        <label for="name" class="block text-sm font-bold text-gray-700">Nama</label>
+                        <input class="w-full px-4 py-2 border rounded-lg" type="text"  id="name" placeholder="Masukkan Nama" Name="Nama">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="class" class="block text-sm font-medium text-gray-700">Kelas</label>
+                        <input class="w-full px-4 py-2 border rounded-lg" type="text" name="class" id="class" placeholder="Masukkan Kelas">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="nis" class="block text-sm font-medium text-gray-700">NIS</label>
+                        <input class="w-full px-4 py-2 border rounded-lg" type="text" name="nis" id="nis" placeholder="Masukkan NIS">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="phone_number" class="block text-sm font-medium text-gray-700">No Telepon</label>
+                        <input class="w-full px-4 py-2 border rounded-lg" type="text" name="phone_number" id="phone_number" placeholder="Masukkan nomor telepon">
+                    </div>
+                    <div class="flex justify-end col-span-2 gap-4">
+                        <a href="/students" class="py-2 px-4 bg-gray-100 rounded-lg">Kembali</a>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Simpan</button>
+                    </div>
+                </form>
+            </div>
+    </main>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer class="bg-gray-900 text-white">
+        <div class="text-center p-4">
+            &copy; <?= date(format: 'Y') ?> Sistem Sekolah - SMK Kristen Immanuel. All rights reserved.
+        </div>
+    </footer>
+    <!-- footer end -->
+</body>
+
+</html>
